@@ -1,86 +1,91 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Monitor App
+ * https://github.com/ghsantos/Monitor
  *
  * @format
  */
 
 import React, { useState, useEffect } from 'react'
 import {
+  Dimensions,
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import SystemNavigationBar from 'react-native-system-navigation-bar'
 
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import Clock from './src/components/Clock'
+import Player from './src/components/Player'
+import Graph from './src/components/Graph'
+import Weather from './src/components/Weather'
+
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark'
+  SystemNavigationBar.navigationHide()
+  console.log(windowWidth)
+
+  const [isLandscape, setIsLandscape] = useState(windowWidth > windowHeight)
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setIsLandscape(window.width > window.height)
+    })
+    return () => subscription?.remove()
+  })
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: '#080B12',
     flex: 1,
   }
 
-  const [time, setTime] = useState('00:00')
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const date = new Date()
-      // setTime(`${date.getHours()}:${date.getMinutes()}`);
-      // setTime(date.toLocaleTimeString('pt-BR').slice(0, -3));
-      setTime(date.toLocaleTimeString('pt-BR'))
-    }, 1000)
-
-    // setTime('');
-    return function cleanup() {
-      clearInterval(interval)
-    }
-  }, [])
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignContent: 'center',
-        }}>
-        <Text style={styles.time}>{time}</Text>
-      </View>
-    </SafeAreaView>
+    <GestureHandlerRootView style={styles.root}>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar translucent={true} hidden={true} />
+        {isLandscape ? (
+          <View style={styles.landscapeContainer}>
+            <Weather />
+            <View style={styles.landscapeCenter}>
+              <Clock />
+              <Player />
+            </View>
+            <Graph />
+          </View>
+        ) : (
+          <View style={styles.portraitContainer}>
+            <Clock />
+            <View style={styles.graphContainer}>
+              <Graph />
+            </View>
+            <Player />
+          </View>
+        )}
+      </SafeAreaView>
+    </GestureHandlerRootView>
   )
 }
 
 const styles = StyleSheet.create({
-  time: {
-    fontSize: 90,
-    fontWeight: '600',
-    color: '#696969',
-    textAlign: 'center',
+  root: {
+    flex: 1,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  landscapeContainer: {
+    flex: 1,
+    flexDirection: 'row',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  landscapeCenter: {
+    flex: 1,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  portraitContainer: {
+    flex: 1,
+    flexDirection: 'column',
   },
-  highlight: {
-    fontWeight: '700',
+  graphContainer: {
+    flex: 4,
   },
 })
 
