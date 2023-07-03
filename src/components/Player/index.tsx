@@ -9,6 +9,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons'
 import io from 'socket.io-client'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
+import { useStringStorage } from '../../hooks/storage'
 
 const PORT = '3000'
 const URL = 'http://192.168.31.75'
@@ -18,7 +19,9 @@ const socket = io(`${URL}:${PORT}`)
 function Player(): JSX.Element {
   const [isConnected, setIsConnected] = useState(socket.connected)
   const [isEditing, setIsEditing] = useState(false)
-  const [url, setUrl] = useState(URL)
+
+  const [storageUrl, setStorageUrl] = useStringStorage('player.url', URL)
+  const [url, setUrl] = useState(storageUrl)
 
   const [trackState, setTrackState] = useState({
     isPlaying: false,
@@ -31,10 +34,14 @@ function Player(): JSX.Element {
     setIsEditing(false)
     SystemNavigationBar.navigationHide()
 
-    socket.io.uri = `${url}:${PORT}`
+    setStorageUrl(url)
+  }
+
+  useEffect(() => {
+    socket.io.uri = `${storageUrl}:${PORT}`
 
     socket.disconnect().connect()
-  }
+  }, [storageUrl])
 
   useEffect(() => {
     socket.on('connect', () => {
