@@ -20,6 +20,7 @@ import Clock from './src/components/Clock'
 import Player from './src/components/Player'
 import Graph from './src/components/Graph'
 import Weather from './src/components/Weather'
+import SmallPlayer from './src/components/Player/SmallPlayer'
 
 const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
@@ -51,7 +52,7 @@ function App(): JSX.Element {
             <Weather />
             <View style={styles.landscapeCenter}>
               <Clock />
-              <Player />
+              <Player renderPlayer={props => <SmallPlayer {...props} />} />
             </View>
             <Graph />
           </View>
@@ -61,7 +62,7 @@ function App(): JSX.Element {
             <View style={styles.graphContainer}>
               <Graph />
             </View>
-            <Player />
+            <Player renderPlayer={props => <SmallPlayer {...props} />} />
           </View>
         )}
       </SafeAreaView>
