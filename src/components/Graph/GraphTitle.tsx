@@ -1,7 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
-function GraphTitle({ coins, selectedCoin, usdValue, brlValue, variation, onPressCoin }): JSX.Element {
+function GraphTitle({
+  coins,
+  selectedCoin,
+  usdValue,
+  brlValue,
+  variation,
+  onPressCoin,
+}): JSX.Element {
   return (
     <View style={styles.container}>
       <View style={styles.coinsContainer}>
@@ -11,11 +18,9 @@ function GraphTitle({ coins, selectedCoin, usdValue, brlValue, variation, onPres
             onPress={() => onPressCoin(item)}
             style={[
               styles.coinButton,
-              {
-                borderColor:
-                  item.id === selectedCoin.id ? '#fff' : 'transparent',
-              },
-            ]}>
+              item.id === selectedCoin.id ? styles.coinButtonSelected : {},
+            ]}
+          >
             <Text style={styles.title}>{item.name}</Text>
           </TouchableOpacity>
         ))}
@@ -48,9 +53,11 @@ const styles = StyleSheet.create({
   coinButton: {
     paddingVertical: 2,
     paddingHorizontal: 6,
-    borderColor: '#fff',
     borderWidth: 2,
     borderRadius: 10,
+  },
+  coinButtonSelected: {
+    borderColor: '#fff',
   },
   priceContainer: {
     flexDirection: 'row',

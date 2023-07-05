@@ -51,7 +51,8 @@ const AxisLabel = ({ text = '', position }) => {
         // backgroundColor: '#f0f',
         width: 50,
         transform: [{ translateX: Math.max(position - 32, 5) }],
-      }}>
+      }}
+    >
       <Text style={{ fontSize: 12, color: '#fff' }}>${text}</Text>
     </View>
   )
@@ -134,7 +135,7 @@ function Chart(): JSX.Element {
     <View style={styles.container}>
       <View style={styles.priceContainer}>
         <CurrencyPrice
-          title="Dolar"
+          title="Dólar"
           value={currencyPrice?.price || 0}
           variation={currencyPrice?.variation || 0}
         />
@@ -165,7 +166,9 @@ function Chart(): JSX.Element {
         state={state}
         transition={transition}
         graphs={graphs}
-        onPressItem={item => setSelectedGraph(item)}
+        onPressItem={item => {
+          setSelectedGraph(item)
+        }}
       />
     </View>
   )

@@ -36,7 +36,7 @@ interface SelectionProps {
   state: SkiaMutableValue<GraphState>
   transition: SkiaMutableValue<number>
   graphs: Graphs
-  onPressItem: Function
+  onPressItem: (item: any) => void
 }
 
 const getDuration = (current: number, next: number) => {
@@ -93,7 +93,8 @@ export const Selection = ({
                 ),
                 easing: Easing.inOut(Easing.cubic),
               })
-            }}>
+            }}
+          >
             <View style={styles.button}>
               <Text style={styles.label}>{graph.label}</Text>
             </View>
