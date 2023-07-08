@@ -1,5 +1,12 @@
-import React, { useEffect } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Animated, {
   useAnimatedStyle,
@@ -8,6 +15,9 @@ import Animated, {
 
 import { PlayerRenderProps } from '.'
 import { formatTime } from '../../utils'
+
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 
 function FullScreenPlayer({
   isConnected,
@@ -28,12 +38,25 @@ function FullScreenPlayer({
     }
   })
 
+  const [isLandscape, setIsLandscape] = useState(windowWidth > windowHeight)
+
   useEffect(() => {
     sharedPercentage.value = playbackProgress.progressPercent
   }, [playbackProgress, sharedPercentage])
 
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setIsLandscape(window.width > window.height)
+    })
+    return () => subscription?.remove()
+  })
+
   return (
-    <View style={styles.container}>
+    <View
+      style={
+        isLandscape ? styles.containerHorizontal : styles.containerVertical
+      }
+    >
       {isConnected && (
         <>
           <View style={styles.coverContainer}>
@@ -98,7 +121,11 @@ function FullScreenPlayer({
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerVertical: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  containerHorizontal: {
     flex: 1,
     flexDirection: 'row',
   },
@@ -143,7 +170,7 @@ const styles = StyleSheet.create({
   },
   playbackContainer: {
     width: '100%',
-    paddingHorizontal: 8,
+    paddingHorizontal: 12,
     marginTop: 10,
   },
   progressContainer: {
