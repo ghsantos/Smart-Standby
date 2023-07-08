@@ -21,6 +21,7 @@ import Player from './src/components/Player'
 import Graph from './src/components/Graph'
 import Weather from './src/components/Weather'
 import SmallPlayer from './src/components/Player/SmallPlayer'
+import FullScreenPlayer from './src/components/Player/FullScreenPlayer'
 
 const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
@@ -47,7 +48,7 @@ function App(): JSX.Element {
     <GestureHandlerRootView style={styles.root}>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar translucent={true} hidden={true} />
-        {isLandscape ? (
+        {/* {isLandscape ? (
           <View style={styles.landscapeContainer}>
             <Weather />
             <View style={styles.landscapeCenter}>
@@ -64,7 +65,8 @@ function App(): JSX.Element {
             </View>
             <Player renderPlayer={props => <SmallPlayer {...props} />} />
           </View>
-        )}
+        )} */}
+        <Player renderPlayer={props => <FullScreenPlayer {...props} />} />
       </SafeAreaView>
     </GestureHandlerRootView>
   )

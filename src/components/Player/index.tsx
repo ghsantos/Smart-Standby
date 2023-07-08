@@ -15,10 +15,18 @@ export interface ITrackState {
   albumTitle: string
 }
 
+export interface IPlaybackProgress {
+  progressPercent: number
+  progressSeconds: number
+  totalSeconds: number
+}
+
 export interface PlayerRenderProps {
   initialUrl: string
   isConnected: boolean
   trackState: ITrackState
+  playbackProgress: IPlaybackProgress
+  coverImage: string
   onPressPlayPause: () => void
   onPressPrev: () => void
   onPressNext: () => void
@@ -40,6 +48,12 @@ function Player({ renderPlayer }: PlayerProps): JSX.Element {
     artist: '',
     trackTitle: '',
     albumTitle: '',
+  })
+  const [coverImage, setCoverImage] = useState('')
+  const [playbackProgress, setPlaybackProgress] = useState<IPlaybackProgress>({
+    progressPercent: 0,
+    progressSeconds: 0,
+    totalSeconds: 0,
   })
 
   const onReconnectUrl = (url: string): void => {
@@ -83,15 +97,46 @@ function Player({ renderPlayer }: PlayerProps): JSX.Element {
       setTrackState(track)
     })
 
+    socket.on('trackcover', image => {
+      console.log('on trackcover', image.length)
+
+      if (image.length) {
+        console.log('setimage', image.length)
+
+        setCoverImage(image)
+      }
+    })
+
+    socket.on('playbackprogress', progress => {
+      setPlaybackProgress(progress)
+    })
+
     return () => {
       socket.off('connect')
     }
   }, [])
 
+  // return (
+  //   <FullScreenPlayer
+  //     initialUrl={storageUrl}
+  //     isConnected={isConnected}
+  //     trackState={trackState}
+  //     playbackProgress={playbackProgress}
+  //     coverImage={coverImage}
+  //     onPressPlayPause={onPressPlayPause}
+  //     onPressPrev={onPressPrev}
+  //     onPressNext={onPressNext}
+  //     onSubmitUrl={onReconnectUrl}
+  //     onPressReconnect={onPressReconnect}
+  //   />
+  // )
+
   return renderPlayer({
     initialUrl: storageUrl,
     isConnected,
     trackState,
+    playbackProgress,
+    coverImage,
     onPressPlayPause,
     onPressPrev,
     onPressNext,
