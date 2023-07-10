@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableWithoutFeedback } from 'react-native'
-import type { SkiaMutableValue } from '@shopify/react-native-skia'
 import {
   Canvas,
   Easing,
@@ -9,6 +8,7 @@ import {
   RoundedRect,
   runTiming,
   useComputedValue,
+  useValue,
   vec,
   mix,
 } from '@shopify/react-native-skia'
@@ -33,8 +33,6 @@ export interface GraphState {
 }
 
 interface SelectionProps {
-  state: SkiaMutableValue<GraphState>
-  transition: SkiaMutableValue<number>
   graphs: Graphs
   onPressItem: (item: any) => void
 }
@@ -43,12 +41,13 @@ const getDuration = (current: number, next: number) => {
   return 300 + 80 * Math.abs(current - next)
 }
 
-export const Selection = ({
-  state,
-  transition,
-  graphs,
-  onPressItem,
-}: SelectionProps) => {
+export const Selection = ({ graphs, onPressItem }: SelectionProps) => {
+  const transition = useValue(0)
+  const state = useValue({
+    next: 0,
+    current: 0,
+  })
+
   const transform = useComputedValue(() => {
     const { current, next } = state.current
     return [
@@ -83,9 +82,9 @@ export const Selection = ({
             onPress={() => {
               onPressItem(graph)
 
-              state.current.current = state.current.next
-              state.current.next = index
+              state.current = { current: state.current.next, next: index }
               transition.current = 0
+
               runTiming(transition, 1, {
                 duration: getDuration(
                   state.current.current,

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { LineGraph } from 'react-native-graph'
-import { useValue } from '@shopify/react-native-skia'
 
 import { Selection } from './Selection'
 import GraphTitle from './GraphTitle'
@@ -121,14 +120,6 @@ function Chart(): JSX.Element {
     }
   }, [selectedCoin.id, selectedGraph.days])
 
-  // animation value to transition from one graph to the next
-  const transition = useValue(0)
-  // indicices of the current and next graphs
-  const state = useValue({
-    next: 0,
-    current: 0,
-  })
-
   const showGraph = coinGraphData.length > 0
 
   return (
@@ -163,8 +154,6 @@ function Chart(): JSX.Element {
         )}
       </View>
       <Selection
-        state={state}
-        transition={transition}
         graphs={graphs}
         onPressItem={item => {
           setSelectedGraph(item)
