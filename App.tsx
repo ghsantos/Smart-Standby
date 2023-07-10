@@ -5,91 +5,39 @@
  * @format
  */
 
-import React, { useState, useEffect } from 'react'
-import {
-  Dimensions,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  View,
-} from 'react-native'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import React from 'react'
+import { StatusBar } from 'react-native'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
-import Clock from './src/components/Clock'
-import Player from './src/components/Player'
-import Graph from './src/components/Graph'
-import Weather from './src/components/Weather'
-import SmallPlayer from './src/components/Player/SmallPlayer'
-import FullScreenPlayer from './src/components/Player/FullScreenPlayer'
+import HomeScreen from './src/screens/Home'
+import MusicPlayer from './src/screens/MusicPlayer'
 
-const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
+const Stack = createNativeStackNavigator()
+const Tab = createMaterialTopTabNavigator()
 
-function App(): JSX.Element {
-  SystemNavigationBar.navigationHide()
-  console.log(windowWidth)
-
-  const [isLandscape, setIsLandscape] = useState(windowWidth > windowHeight)
-
-  useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', ({ window }) => {
-      setIsLandscape(window.width > window.height)
-    })
-    return () => subscription?.remove()
-  })
-
-  const backgroundStyle = {
-    backgroundColor: '#080B12',
-    flex: 1,
-  }
-
+function TabScreens() {
   return (
-    <GestureHandlerRootView style={styles.root}>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar translucent={true} hidden={true} />
-        {/* {isLandscape ? (
-          <View style={styles.landscapeContainer}>
-            <Weather />
-            <View style={styles.landscapeCenter}>
-              <Clock />
-              <Player renderPlayer={props => <SmallPlayer {...props} />} />
-            </View>
-            <Graph />
-          </View>
-        ) : (
-          <View style={styles.portraitContainer}>
-            <Clock />
-            <View style={styles.graphContainer}>
-              <Graph />
-            </View>
-            <Player renderPlayer={props => <SmallPlayer {...props} />} />
-          </View>
-        )} */}
-        <Player renderPlayer={props => <FullScreenPlayer {...props} />} />
-      </SafeAreaView>
-    </GestureHandlerRootView>
+    <Tab.Navigator tabBar={() => null}>
+      <Tab.Screen name="home" component={HomeScreen} />
+      <Tab.Screen name="player" component={MusicPlayer} />
+    </Tab.Navigator>
   )
 }
 
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-  landscapeContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  landscapeCenter: {
-    flex: 1,
-  },
-  portraitContainer: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  graphContainer: {
-    flex: 4,
-  },
-})
+function App(): JSX.Element {
+  SystemNavigationBar.navigationHide()
+
+  return (
+    <NavigationContainer>
+      <StatusBar translucent={true} hidden={true} />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="HomeTabs" component={TabScreens} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
 
 export default App
