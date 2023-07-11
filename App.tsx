@@ -17,12 +17,15 @@ import HomeScreen from './src/screens/Home'
 import MusicPlayer from './src/screens/MusicPlayer'
 import DigitalRain from './src/screens/DigitalRain'
 
+import { HelloWorld } from './src/screens/Test'
+
 const Stack = createNativeStackNavigator()
 const Tab = createMaterialTopTabNavigator()
 
 function TabScreens() {
   return (
-    <Tab.Navigator tabBar={() => null}>
+    <Tab.Navigator tabBar={() => null} offscreenPageLimit={1}>
+      {/* <Tab.Screen name="test" component={HelloWorld} /> */}
       <Tab.Screen name="home" component={HomeScreen} />
       <Tab.Screen name="player" component={MusicPlayer} />
       <Tab.Screen name="matrix" component={DigitalRain} />

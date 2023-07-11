@@ -7,9 +7,14 @@ import {
   useFont,
 } from '@shopify/react-native-skia'
 import React from 'react'
-import { useWindowDimensions } from 'react-native'
+import { StyleSheet, View, useWindowDimensions } from 'react-native'
 
 import { COLS, ROWS, Symbol } from './Symbol'
+import {
+  NavigationProp,
+  ParamListBase,
+  useIsFocused,
+} from '@react-navigation/native'
 
 const cols = new Array(COLS).fill(0).map((_, i) => i)
 const rows = new Array(ROWS).fill(0).map((_, i) => i)
@@ -31,35 +36,56 @@ const streams = cols.map(() =>
     .flat(),
 )
 
-export default function DigitalRain() {
+interface DigitalRainProps {
+  navigation: NavigationProp<ParamListBase>
+}
+
+export default function DigitalRain({}: DigitalRainProps) {
   const clock = useClockValue()
   const { width, height } = useWindowDimensions()
   const symbol = { width: width / COLS, height: height / ROWS }
   const font = useFont(require('./matrix-code-nfi.otf'), symbol.height)
-  if (font === null) {
-    return null
+
+  const isFocused = useIsFocused()
+
+  if (font === null || !isFocused) {
+    return <View style={styles.background} />
   }
+
   const symbols = font.getGlyphIDs('abcdefghijklmnopqrstuvwxyz')
+
   return (
-    <Canvas style={{ flex: 1 }}>
-      <Fill color="black" />
-      <Group>
-        <BlurMask blur={8} style="solid" />
-        {cols.map((_i, i) =>
-          rows.map((_j, j) => (
-            <Symbol
-              symbols={symbols}
-              font={font}
-              timestamp={clock}
-              key={`${i}-${j}`}
-              i={i}
-              j={j}
-              stream={streams[i]}
-              symbol={symbol}
-            />
-          )),
-        )}
-      </Group>
-    </Canvas>
+    <View style={styles.background}>
+      <Canvas style={styles.canvas}>
+        <Fill color="black" />
+        <Group>
+          <BlurMask blur={8} style="solid" />
+          {cols.map((_i, i) =>
+            rows.map((_j, j) => (
+              <Symbol
+                symbols={symbols}
+                font={font}
+                timestamp={clock}
+                key={`${i}-${j}`}
+                i={i}
+                j={j}
+                stream={streams[i]}
+                symbol={symbol}
+              />
+            )),
+          )}
+        </Group>
+      </Canvas>
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#080B12',
+    flex: 1,
+  },
+  canvas: {
+    flex: 1,
+  },
+})
