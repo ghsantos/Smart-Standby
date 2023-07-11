@@ -11,9 +11,11 @@ import SystemNavigationBar from 'react-native-system-navigation-bar'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 import HomeScreen from './src/screens/Home'
 import MusicPlayer from './src/screens/MusicPlayer'
+import DigitalRain from './src/screens/DigitalRain'
 
 const Stack = createNativeStackNavigator()
 const Tab = createMaterialTopTabNavigator()
@@ -23,6 +25,7 @@ function TabScreens() {
     <Tab.Navigator tabBar={() => null}>
       <Tab.Screen name="home" component={HomeScreen} />
       <Tab.Screen name="player" component={MusicPlayer} />
+      <Tab.Screen name="matrix" component={DigitalRain} />
     </Tab.Navigator>
   )
 }
@@ -32,10 +35,12 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <StatusBar translucent={true} hidden={true} />
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="HomeTabs" component={TabScreens} />
-      </Stack.Navigator>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <StatusBar translucent={true} hidden={true} />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="HomeTabs" component={TabScreens} />
+        </Stack.Navigator>
+      </GestureHandlerRootView>
     </NavigationContainer>
   )
 }

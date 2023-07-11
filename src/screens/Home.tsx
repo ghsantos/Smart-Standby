@@ -13,7 +13,6 @@ import {
   StyleSheet,
   View,
 } from 'react-native'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
 
 import Clock from '../components/Clock'
@@ -38,40 +37,34 @@ function App(): JSX.Element {
     return () => subscription?.remove()
   })
 
-  const backgroundStyle = {
-    backgroundColor: '#080B12',
-    flex: 1,
-  }
-
   return (
-    <GestureHandlerRootView style={styles.root}>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar translucent={true} hidden={true} />
-        {isLandscape ? (
-          <View style={styles.landscapeContainer}>
-            <Weather />
-            <View style={styles.landscapeCenter}>
-              <Clock />
-              <Player renderPlayer={props => <SmallPlayer {...props} />} />
-            </View>
-            <Graph />
-          </View>
-        ) : (
-          <View style={styles.portraitContainer}>
+    <SafeAreaView style={styles.root}>
+      <StatusBar translucent={true} hidden={true} />
+      {isLandscape ? (
+        <View style={styles.landscapeContainer}>
+          <Weather />
+          <View style={styles.landscapeCenter}>
             <Clock />
-            <View style={styles.graphContainer}>
-              <Graph />
-            </View>
             <Player renderPlayer={props => <SmallPlayer {...props} />} />
           </View>
-        )}
-      </SafeAreaView>
-    </GestureHandlerRootView>
+          <Graph />
+        </View>
+      ) : (
+        <View style={styles.portraitContainer}>
+          <Clock />
+          <View style={styles.graphContainer}>
+            <Graph />
+          </View>
+          <Player renderPlayer={props => <SmallPlayer {...props} />} />
+        </View>
+      )}
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   root: {
+    backgroundColor: '#080B12',
     flex: 1,
   },
   landscapeContainer: {
