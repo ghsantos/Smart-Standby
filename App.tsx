@@ -17,7 +17,8 @@ import HomeScreen from './src/screens/Home'
 import MusicPlayer from './src/screens/MusicPlayer'
 import DigitalRain from './src/screens/DigitalRain'
 
-import { HelloWorld } from './src/screens/Test'
+// import { HelloWorld } from './src/screens/Test'
+import { SingletonHooksContainer } from 'react-singleton-hook'
 
 const Stack = createNativeStackNavigator()
 const Tab = createMaterialTopTabNavigator()
@@ -39,6 +40,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <GestureHandlerRootView style={{ flex: 1 }}>
+        <SingletonHooksContainer />
         <StatusBar translucent={true} hidden={true} />
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="HomeTabs" component={TabScreens} />

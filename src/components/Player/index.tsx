@@ -2,11 +2,89 @@ import { useState, useEffect } from 'react'
 import io from 'socket.io-client'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
 import { useStringStorage } from '../../hooks/storage'
+import { singletonHook } from 'react-singleton-hook'
 
 const PORT = '3000'
 const URL = 'http://192.168.31.75'
 
 const socket = io(`${URL}:${PORT}`)
+
+const INITIAL_TRACK_STATE = {
+  isPlaying: false,
+  artist: '',
+  trackTitle: '',
+  albumTitle: '',
+}
+
+const INITIAL_PLAYBACK_PROGRESS = {
+  progressPercent: 0,
+  progressSeconds: 0,
+  totalSeconds: 0,
+}
+
+const INITIAL_SOCKET_STATE = {
+  isConnected: false,
+  trackState: INITIAL_TRACK_STATE,
+  coverImage: '',
+  playbackProgress: INITIAL_PLAYBACK_PROGRESS,
+}
+
+const useSocketImpl = () => {
+  const [isConnected, setIsConnected] = useState(socket.connected)
+
+  const [storageUrl] = useStringStorage('player.url', URL)
+
+  const [trackState, setTrackState] = useState<ITrackState>(INITIAL_TRACK_STATE)
+  const [coverImage, setCoverImage] = useState('')
+  const [playbackProgress, setPlaybackProgress] = useState<IPlaybackProgress>(
+    INITIAL_PLAYBACK_PROGRESS,
+  )
+
+  useEffect(() => {
+    socket.io.uri = `${storageUrl}:${PORT}`
+
+    socket.disconnect().connect()
+  }, [storageUrl])
+
+  useEffect(() => {
+    socket.on('connect', () => {
+      setIsConnected(true)
+    })
+
+    socket.on('disconnect', () => {
+      setIsConnected(false)
+    })
+
+    socket.on('trackstate', track => {
+      setTrackState(track)
+    })
+
+    socket.on('trackcover', image => {
+      if (image.length) {
+        console.log('setimage', image.length)
+
+        setCoverImage(image)
+      }
+    })
+
+    socket.on('playbackprogress', progress => {
+      setPlaybackProgress(progress)
+    })
+
+    return () => {
+      socket.off('connect')
+    }
+  }, [])
+
+  return {
+    isConnected,
+    trackState,
+    coverImage,
+    playbackProgress,
+  }
+}
+
+const useSocket = singletonHook(INITIAL_SOCKET_STATE, useSocketImpl)
 
 export interface ITrackState {
   isPlaying: boolean
@@ -39,22 +117,15 @@ interface PlayerProps {
 }
 
 function Player({ renderPlayer }: PlayerProps): JSX.Element {
-  const [isConnected, setIsConnected] = useState(socket.connected)
-
   const [storageUrl, setStorageUrl] = useStringStorage('player.url', URL)
 
-  const [trackState, setTrackState] = useState<ITrackState>({
-    isPlaying: false,
-    artist: '',
-    trackTitle: '',
-    albumTitle: '',
-  })
-  const [coverImage, setCoverImage] = useState('')
-  const [playbackProgress, setPlaybackProgress] = useState<IPlaybackProgress>({
-    progressPercent: 0,
-    progressSeconds: 0,
-    totalSeconds: 0,
-  })
+  const socketState = useSocket()
+  const {
+    isConnected = true,
+    trackState,
+    coverImage,
+    playbackProgress,
+  } = socketState ? socketState : INITIAL_SOCKET_STATE
 
   const onReconnectUrl = (url: string): void => {
     SystemNavigationBar.navigationHide()
@@ -77,59 +148,6 @@ function Player({ renderPlayer }: PlayerProps): JSX.Element {
   const onPressReconnect = (): void => {
     socket.connect()
   }
-
-  useEffect(() => {
-    socket.io.uri = `${storageUrl}:${PORT}`
-
-    socket.disconnect().connect()
-  }, [storageUrl])
-
-  useEffect(() => {
-    socket.on('connect', () => {
-      setIsConnected(true)
-    })
-
-    socket.on('disconnect', () => {
-      setIsConnected(false)
-    })
-
-    socket.on('trackstate', track => {
-      setTrackState(track)
-    })
-
-    socket.on('trackcover', image => {
-      console.log('on trackcover', image.length)
-
-      if (image.length) {
-        console.log('setimage', image.length)
-
-        setCoverImage(image)
-      }
-    })
-
-    socket.on('playbackprogress', progress => {
-      setPlaybackProgress(progress)
-    })
-
-    return () => {
-      socket.off('connect')
-    }
-  }, [])
-
-  // return (
-  //   <FullScreenPlayer
-  //     initialUrl={storageUrl}
-  //     isConnected={isConnected}
-  //     trackState={trackState}
-  //     playbackProgress={playbackProgress}
-  //     coverImage={coverImage}
-  //     onPressPlayPause={onPressPlayPause}
-  //     onPressPrev={onPressPrev}
-  //     onPressNext={onPressNext}
-  //     onSubmitUrl={onReconnectUrl}
-  //     onPressReconnect={onPressReconnect}
-  //   />
-  // )
 
   return renderPlayer({
     initialUrl: storageUrl,
