@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import dayjs from 'dayjs'
+import 'dayjs/locale/pt-br'
 
-import { getDate } from '../../utils'
+dayjs.locale('pt-br')
+// import { getDate } from '../../utils'
 
 function Clock(): JSX.Element {
   const [time, setTime] = useState(new Date())
@@ -17,12 +20,14 @@ function Clock(): JSX.Element {
     }
   }, [])
 
+  const dayTime = dayjs(time)
+
   return (
     <View style={styles.container}>
-      <Text style={styles.time}>
-        {time.toLocaleTimeString('pt-BR').slice(0, -3)}
+      <Text style={styles.time}>{dayTime.format('HH:mm')}</Text>
+      <Text style={styles.date}>
+        {`${dayTime.format('dddd, D')} de ${dayTime.format('MMMM')}`}
       </Text>
-      <Text style={styles.date}>{getDate(time)}</Text>
     </View>
   )
 }

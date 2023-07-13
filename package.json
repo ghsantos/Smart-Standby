@@ -16,6 +16,7 @@
     "@shopify/react-native-skia": "^0.1.197",
     "@types/gaussian": "^1.2.0",
     "@types/react-native-vector-icons": "^6.4.13",
+    "dayjs": "^1.11.9",
     "gaussian": "^1.3.0",
     "react": "18.2.0",
     "react-native": "0.72.1",
