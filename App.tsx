@@ -12,13 +12,15 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { SingletonHooksContainer } from 'react-singleton-hook'
 
 import HomeScreen from './src/screens/Home'
 import MusicPlayer from './src/screens/MusicPlayer'
 import DigitalRain from './src/screens/DigitalRain'
+import ClockScreen from './src/screens/ClockScreen'
+import ClockConfiguration from './src/screens/ClockScreen/Configuration'
 
 // import { HelloWorld } from './src/screens/Test'
-import { SingletonHooksContainer } from 'react-singleton-hook'
 
 const Stack = createNativeStackNavigator()
 const Tab = createMaterialTopTabNavigator()
@@ -27,6 +29,7 @@ function TabScreens() {
   return (
     <Tab.Navigator tabBar={() => null} offscreenPageLimit={1}>
       {/* <Tab.Screen name="test" component={HelloWorld} /> */}
+      <Tab.Screen name="clock" component={ClockScreen} />
       <Tab.Screen name="home" component={HomeScreen} />
       <Tab.Screen name="player" component={MusicPlayer} />
       <Tab.Screen name="matrix" component={DigitalRain} />
@@ -44,6 +47,10 @@ function App(): JSX.Element {
         <StatusBar translucent={true} hidden={true} />
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="HomeTabs" component={TabScreens} />
+          <Stack.Screen
+            name="ClockConfiguration"
+            component={ClockConfiguration}
+          />
         </Stack.Navigator>
       </GestureHandlerRootView>
     </NavigationContainer>
