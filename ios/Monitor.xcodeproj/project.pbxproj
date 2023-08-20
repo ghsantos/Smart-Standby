@@ -14,6 +14,15 @@
 		7699B88040F8A987B510C191 /* libPods-Monitor-MonitorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Monitor-MonitorTests.a */; };
 		EC4D87EE29B2C86E00CA2483 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4D87ED29B2C86E00CA2483 /* fontello.ttf */; };
 		EC4D87F029B2CAE600CA2483 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4D87ED29B2C86E00CA2483 /* fontello.ttf */; };
+		2C2AF144F6D74878B31732EB /* 8-Bit Madness.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 582CA282C92B4104AD368376 /* 8-Bit Madness.ttf */; };
+		43C8643BD93948899B938E17 /* BitMap.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CEB51BC7AB04DAB9810BB29 /* BitMap.ttf */; };
+		DB4B2A96910F4C67A4A03436 /* Intellecta Digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53C56DA06CDE44D4A1740129 /* Intellecta Digital.ttf */; };
+		2EB3442FAD1445C589AB0228 /* Josefin Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF2763EB6964423D9876F3F4 /* Josefin Sans.ttf */; };
+		15D0EBE7565240C7838B339C /* LCDDot TR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E6927B0D7B84E4AA977DA8C /* LCDDot TR.ttf */; };
+		3DAFA0B9E6C348099359731B /* LED Dot-Matrix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CBCB41B8FD4200BA7C6AB3 /* LED Dot-Matrix.ttf */; };
+		3C6C07AF340242CAB8A0388A /* Open 24 Display St.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEAF464EC3A44904A3A2E5B7 /* Open 24 Display St.ttf */; };
+		705C4D64E33245E8A211538F /* kg-second-chances.ketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A91FFCA4851457A8DED7DD4 /* kg-second-chances.ketch.ttf */; };
+		D66FDD1C263D4F93BE8E922E /* kg-second-chances.olid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C4B885A59AA4415A87DCB17 /* kg-second-chances.olid.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +70,15 @@
 		ECF4DFC629AA77D600CF4EC1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		ECF4DFC729AA77D600CF4EC1 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		582CA282C92B4104AD368376 /* 8-Bit Madness.ttf */ = {isa = PBXFileReference; name = "8-Bit Madness.ttf"; path = "../assets/fonts/8-Bit Madness.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6CEB51BC7AB04DAB9810BB29 /* BitMap.ttf */ = {isa = PBXFileReference; name = "BitMap.ttf"; path = "../assets/fonts/BitMap.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		53C56DA06CDE44D4A1740129 /* Intellecta Digital.ttf */ = {isa = PBXFileReference; name = "Intellecta Digital.ttf"; path = "../assets/fonts/Intellecta Digital.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF2763EB6964423D9876F3F4 /* Josefin Sans.ttf */ = {isa = PBXFileReference; name = "Josefin Sans.ttf"; path = "../assets/fonts/Josefin Sans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8E6927B0D7B84E4AA977DA8C /* LCDDot TR.ttf */ = {isa = PBXFileReference; name = "LCDDot TR.ttf"; path = "../assets/fonts/LCDDot TR.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F7CBCB41B8FD4200BA7C6AB3 /* LED Dot-Matrix.ttf */ = {isa = PBXFileReference; name = "LED Dot-Matrix.ttf"; path = "../assets/fonts/LED Dot-Matrix.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEAF464EC3A44904A3A2E5B7 /* Open 24 Display St.ttf */ = {isa = PBXFileReference; name = "Open 24 Display St.ttf"; path = "../assets/fonts/Open 24 Display St.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6A91FFCA4851457A8DED7DD4 /* kg-second-chances.ketch.ttf */ = {isa = PBXFileReference; name = "kg-second-chances.ketch.ttf"; path = "../assets/fonts/kg-second-chances.ketch.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C4B885A59AA4415A87DCB17 /* kg-second-chances.olid.ttf */ = {isa = PBXFileReference; name = "kg-second-chances.olid.ttf"; path = "../assets/fonts/kg-second-chances.olid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +158,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				DE43930B8F6243EFA51F60E6 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -190,6 +209,23 @@
 			name = Fonts;
 			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
+		};
+		DE43930B8F6243EFA51F60E6 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				582CA282C92B4104AD368376 /* 8-Bit Madness.ttf */,
+				6CEB51BC7AB04DAB9810BB29 /* BitMap.ttf */,
+				53C56DA06CDE44D4A1740129 /* Intellecta Digital.ttf */,
+				DF2763EB6964423D9876F3F4 /* Josefin Sans.ttf */,
+				8E6927B0D7B84E4AA977DA8C /* LCDDot TR.ttf */,
+				F7CBCB41B8FD4200BA7C6AB3 /* LED Dot-Matrix.ttf */,
+				CEAF464EC3A44904A3A2E5B7 /* Open 24 Display St.ttf */,
+				6A91FFCA4851457A8DED7DD4 /* kg-second-chances.ketch.ttf */,
+				7C4B885A59AA4415A87DCB17 /* kg-second-chances.olid.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -287,6 +323,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC4D87F029B2CAE600CA2483 /* fontello.ttf in Resources */,
+				2C2AF144F6D74878B31732EB /* 8-Bit Madness.ttf in Resources */,
+				43C8643BD93948899B938E17 /* BitMap.ttf in Resources */,
+				DB4B2A96910F4C67A4A03436 /* Intellecta Digital.ttf in Resources */,
+				2EB3442FAD1445C589AB0228 /* Josefin Sans.ttf in Resources */,
+				15D0EBE7565240C7838B339C /* LCDDot TR.ttf in Resources */,
+				3DAFA0B9E6C348099359731B /* LED Dot-Matrix.ttf in Resources */,
+				3C6C07AF340242CAB8A0388A /* Open 24 Display St.ttf in Resources */,
+				705C4D64E33245E8A211538F /* kg-second-chances.ketch.ttf in Resources */,
+				D66FDD1C263D4F93BE8E922E /* kg-second-chances.olid.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

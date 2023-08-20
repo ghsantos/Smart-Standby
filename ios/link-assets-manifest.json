@@ -2,8 +2,44 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/8-Bit Madness.ttf",
+      "sha1": "4bab00d090405d97cf5559d08b854da9000d1436"
+    },
+    {
+      "path": "assets/fonts/BitMap.ttf",
+      "sha1": "2b7bdeb9bb2bf0cdbcb21b9d6f1a14873f609651"
+    },
+    {
+      "path": "assets/fonts/Intellecta Digital.ttf",
+      "sha1": "b4233cf8d589e1e0da91f2738d53427f95b94f42"
+    },
+    {
+      "path": "assets/fonts/Josefin Sans.ttf",
+      "sha1": "c6feb3d2b900dec157b8b1050c03098b1d54e0f2"
+    },
+    {
+      "path": "assets/fonts/LCDDot TR.ttf",
+      "sha1": "ad2992110ad98e2f3ed35afce61c4bf20e97731f"
+    },
+    {
+      "path": "assets/fonts/LED Dot-Matrix.ttf",
+      "sha1": "8f898b1ff95ac829cba51a7755fd8d1754edb162"
+    },
+    {
+      "path": "assets/fonts/Open 24 Display St.ttf",
+      "sha1": "1cd1baf16d47a3855bc01bcf87986ef0e11af021"
+    },
+    {
       "path": "assets/fonts/fontello.ttf",
       "sha1": "afb6aa6bae5adcd9c05db4c3b7398fefe075d207"
+    },
+    {
+      "path": "assets/fonts/kg-second-chances.ketch.ttf",
+      "sha1": "a58586ae49ee62410cd4a8c5b7e9657d6339df6b"
+    },
+    {
+      "path": "assets/fonts/kg-second-chances.olid.ttf",
+      "sha1": "a7ecfe045e51b1fdefad179cf18f5a313f8c5956"
     }
   ]
 }
