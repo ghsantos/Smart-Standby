@@ -23,6 +23,39 @@
 		3C6C07AF340242CAB8A0388A /* Open 24 Display St.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEAF464EC3A44904A3A2E5B7 /* Open 24 Display St.ttf */; };
 		705C4D64E33245E8A211538F /* kg-second-chances.ketch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A91FFCA4851457A8DED7DD4 /* kg-second-chances.ketch.ttf */; };
 		D66FDD1C263D4F93BE8E922E /* kg-second-chances.olid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C4B885A59AA4415A87DCB17 /* kg-second-chances.olid.ttf */; };
+		3AF334D8B9DE4F829085843B /* Edge Of The Galaxy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 546C5CCA15574965A4538E36 /* Edge Of The Galaxy.otf */; };
+		E10E841F955B4E6DB68F8C18 /* Library 3 AM Soft.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BF561D43F634ECEBCAA3E42 /* Library 3 AM Soft.otf */; };
+		031EECAE6E914BF4A2064FE2 /* Neoneon.otf in Resources */ = {isa = PBXBuildFile; fileRef = 93A42E4A175D459E96C68E11 /* Neoneon.otf */; };
+		F8C495F8735E4785A5319DBB /* Siti Maesaroh.otf in Resources */ = {isa = PBXBuildFile; fileRef = AD689DF859AB4202A19C162E /* Siti Maesaroh.otf */; };
+		78C86F8BAF7047F8B13943DB /* VFD Hypernova.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F881871384BBC984BFFF3 /* VFD Hypernova.otf */; };
+		7FB01D568FDD4432845A88B3 /* Znikomitno25.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB24BF55787F4F3F83952FCD /* Znikomitno25.otf */; };
+		5C8067BD58754009A7B96455 /* 2Peas 4th of July.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21B4343193E345A3B81EBB63 /* 2Peas 4th of July.ttf */; };
+		150D08505AD14140A16C1128 /* 3D Isometric.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B93A4B8C85DE417C86B8E445 /* 3D Isometric.ttf */; };
+		296F99C5540C4A9280561122 /* Amadeus.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E63F87A053CE42A7A2D6AC76 /* Amadeus.ttf */; };
+		8F7103EB1AAF43118D5DF323 /* AristotelianNBP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D0BC5BA259F4034AD134B27 /* AristotelianNBP.ttf */; };
+		6940A3D403084363A9604147 /* Brewsky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC8E99C7DC1436F89E38BB3 /* Brewsky.ttf */; };
+		5EE4DC250C44458F8B0973FC /* Cute Aurora.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71B0426534884BE58AF457DC /* Cute Aurora.ttf */; };
+		0C812816BD98483E8668B432 /* Dreamland Stars.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EC9865D8BDE44A193FBBF94 /* Dreamland Stars.ttf */; };
+		ABAF21ADBF134095A57FD75E /* Dreamland.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B6E586E8F894FBB907F659C /* Dreamland.ttf */; };
+		252D7156E13149CA98F665C9 /* E1234.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDB797C063B348E0A6D9C11F /* E1234.ttf */; };
+		B7A3CDDF051E411395303E81 /* Erbos Draco 1st Open NBP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A40C4FD7585C4A4C9C8B6814 /* Erbos Draco 1st Open NBP.ttf */; };
+		605D76D8F8DB451E8B491365 /* Help Me.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A03BF934E8840EC9A078448 /* Help Me.ttf */; };
+		2AD22A6F546F44A79746DAF2 /* Hexcore.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05A3D0ECDA046A1A13DB93D /* Hexcore.ttf */; };
+		13E8F788BC8F46A58613E691 /* Killen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E431F117413E4643A4784F1D /* Killen.ttf */; };
+		4F2829CDD9DA4D12BB948322 /* NBP Readout.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAC844BC194817BCAD078E /* NBP Readout.ttf */; };
+		12FE9459039048E1BBF10F37 /* Neon Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 394A48B20B534F9B9EEF947C /* Neon Sans.ttf */; };
+		9FE3D7E4F1C849AD9C6611D4 /* New Walt Disney Ui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4294BDD0C014695A8A3786A /* New Walt Disney Ui.ttf */; };
+		D3CEDDEC9E6B4729BF09E561 /* Novem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C54E431490A34106BC28BEC7 /* Novem.ttf */; };
+		A267DF70349040448DAB4644 /* Nugo Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F2BB8D941141A3A8DADD76 /* Nugo Sans.ttf */; };
+		0871CD9BED6A4992A2417129 /* Parisienne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99F3B217CE074CEB8FC744D3 /* Parisienne.ttf */; };
+		448C3DC4B5054E418FAF607A /* Rock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78BB719CFE3B44B89230B7A4 /* Rock.ttf */; };
+		B98066D6A2B742BF96D1097C /* RyujinAttack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB20462585704B16BD61850B /* RyujinAttack.ttf */; };
+		9C385012467D459B87E22CAF /* Sacramento.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9525C4327ACA476A9C086E87 /* Sacramento.ttf */; };
+		B1706DFE9CC9473E8C453E46 /* Star Trek Future.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA8DA56394B04DFCB8F7303C /* Star Trek Future.ttf */; };
+		B4D7E63989024C1687BEFD4F /* Time Burner.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFA2683DEF1D490CB3566A65 /* Time Burner.ttf */; };
+		E2C491A1A261409D8495EE60 /* Wanders.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A77D1218810C4CD0B78634F1 /* Wanders.ttf */; };
+		4808379E24E24195B08BC488 /* a dripping marker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 465391B569684C73BC1038CD /* a dripping marker.ttf */; };
+		ED1C634750E54F689636730B /* moonhouse.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17514AC2BA8E4D97A99C62AD /* moonhouse.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +112,39 @@
 		CEAF464EC3A44904A3A2E5B7 /* Open 24 Display St.ttf */ = {isa = PBXFileReference; name = "Open 24 Display St.ttf"; path = "../assets/fonts/Open 24 Display St.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6A91FFCA4851457A8DED7DD4 /* kg-second-chances.ketch.ttf */ = {isa = PBXFileReference; name = "kg-second-chances.ketch.ttf"; path = "../assets/fonts/kg-second-chances.ketch.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7C4B885A59AA4415A87DCB17 /* kg-second-chances.olid.ttf */ = {isa = PBXFileReference; name = "kg-second-chances.olid.ttf"; path = "../assets/fonts/kg-second-chances.olid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		546C5CCA15574965A4538E36 /* Edge Of The Galaxy.otf */ = {isa = PBXFileReference; name = "Edge Of The Galaxy.otf"; path = "../assets/fonts/Edge Of The Galaxy.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0BF561D43F634ECEBCAA3E42 /* Library 3 AM Soft.otf */ = {isa = PBXFileReference; name = "Library 3 AM Soft.otf"; path = "../assets/fonts/Library 3 AM Soft.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		93A42E4A175D459E96C68E11 /* Neoneon.otf */ = {isa = PBXFileReference; name = "Neoneon.otf"; path = "../assets/fonts/Neoneon.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AD689DF859AB4202A19C162E /* Siti Maesaroh.otf */ = {isa = PBXFileReference; name = "Siti Maesaroh.otf"; path = "../assets/fonts/Siti Maesaroh.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C6F881871384BBC984BFFF3 /* VFD Hypernova.otf */ = {isa = PBXFileReference; name = "VFD Hypernova.otf"; path = "../assets/fonts/VFD Hypernova.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EB24BF55787F4F3F83952FCD /* Znikomitno25.otf */ = {isa = PBXFileReference; name = "Znikomitno25.otf"; path = "../assets/fonts/Znikomitno25.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		21B4343193E345A3B81EBB63 /* 2Peas 4th of July.ttf */ = {isa = PBXFileReference; name = "2Peas 4th of July.ttf"; path = "../assets/fonts/2Peas 4th of July.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B93A4B8C85DE417C86B8E445 /* 3D Isometric.ttf */ = {isa = PBXFileReference; name = "3D Isometric.ttf"; path = "../assets/fonts/3D Isometric.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E63F87A053CE42A7A2D6AC76 /* Amadeus.ttf */ = {isa = PBXFileReference; name = "Amadeus.ttf"; path = "../assets/fonts/Amadeus.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D0BC5BA259F4034AD134B27 /* AristotelianNBP.ttf */ = {isa = PBXFileReference; name = "AristotelianNBP.ttf"; path = "../assets/fonts/AristotelianNBP.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3CC8E99C7DC1436F89E38BB3 /* Brewsky.ttf */ = {isa = PBXFileReference; name = "Brewsky.ttf"; path = "../assets/fonts/Brewsky.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		71B0426534884BE58AF457DC /* Cute Aurora.ttf */ = {isa = PBXFileReference; name = "Cute Aurora.ttf"; path = "../assets/fonts/Cute Aurora.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2EC9865D8BDE44A193FBBF94 /* Dreamland Stars.ttf */ = {isa = PBXFileReference; name = "Dreamland Stars.ttf"; path = "../assets/fonts/Dreamland Stars.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8B6E586E8F894FBB907F659C /* Dreamland.ttf */ = {isa = PBXFileReference; name = "Dreamland.ttf"; path = "../assets/fonts/Dreamland.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EDB797C063B348E0A6D9C11F /* E1234.ttf */ = {isa = PBXFileReference; name = "E1234.ttf"; path = "../assets/fonts/E1234.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A40C4FD7585C4A4C9C8B6814 /* Erbos Draco 1st Open NBP.ttf */ = {isa = PBXFileReference; name = "Erbos Draco 1st Open NBP.ttf"; path = "../assets/fonts/Erbos Draco 1st Open NBP.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A03BF934E8840EC9A078448 /* Help Me.ttf */ = {isa = PBXFileReference; name = "Help Me.ttf"; path = "../assets/fonts/Help Me.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E05A3D0ECDA046A1A13DB93D /* Hexcore.ttf */ = {isa = PBXFileReference; name = "Hexcore.ttf"; path = "../assets/fonts/Hexcore.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E431F117413E4643A4784F1D /* Killen.ttf */ = {isa = PBXFileReference; name = "Killen.ttf"; path = "../assets/fonts/Killen.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1FBAC844BC194817BCAD078E /* NBP Readout.ttf */ = {isa = PBXFileReference; name = "NBP Readout.ttf"; path = "../assets/fonts/NBP Readout.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		394A48B20B534F9B9EEF947C /* Neon Sans.ttf */ = {isa = PBXFileReference; name = "Neon Sans.ttf"; path = "../assets/fonts/Neon Sans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E4294BDD0C014695A8A3786A /* New Walt Disney Ui.ttf */ = {isa = PBXFileReference; name = "New Walt Disney Ui.ttf"; path = "../assets/fonts/New Walt Disney Ui.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C54E431490A34106BC28BEC7 /* Novem.ttf */ = {isa = PBXFileReference; name = "Novem.ttf"; path = "../assets/fonts/Novem.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E3F2BB8D941141A3A8DADD76 /* Nugo Sans.ttf */ = {isa = PBXFileReference; name = "Nugo Sans.ttf"; path = "../assets/fonts/Nugo Sans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		99F3B217CE074CEB8FC744D3 /* Parisienne.ttf */ = {isa = PBXFileReference; name = "Parisienne.ttf"; path = "../assets/fonts/Parisienne.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		78BB719CFE3B44B89230B7A4 /* Rock.ttf */ = {isa = PBXFileReference; name = "Rock.ttf"; path = "../assets/fonts/Rock.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FB20462585704B16BD61850B /* RyujinAttack.ttf */ = {isa = PBXFileReference; name = "RyujinAttack.ttf"; path = "../assets/fonts/RyujinAttack.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9525C4327ACA476A9C086E87 /* Sacramento.ttf */ = {isa = PBXFileReference; name = "Sacramento.ttf"; path = "../assets/fonts/Sacramento.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CA8DA56394B04DFCB8F7303C /* Star Trek Future.ttf */ = {isa = PBXFileReference; name = "Star Trek Future.ttf"; path = "../assets/fonts/Star Trek Future.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EFA2683DEF1D490CB3566A65 /* Time Burner.ttf */ = {isa = PBXFileReference; name = "Time Burner.ttf"; path = "../assets/fonts/Time Burner.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A77D1218810C4CD0B78634F1 /* Wanders.ttf */ = {isa = PBXFileReference; name = "Wanders.ttf"; path = "../assets/fonts/Wanders.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		465391B569684C73BC1038CD /* a dripping marker.ttf */ = {isa = PBXFileReference; name = "a dripping marker.ttf"; path = "../assets/fonts/a dripping marker.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		17514AC2BA8E4D97A99C62AD /* moonhouse.ttf */ = {isa = PBXFileReference; name = "moonhouse.ttf"; path = "../assets/fonts/moonhouse.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +288,39 @@
 				CEAF464EC3A44904A3A2E5B7 /* Open 24 Display St.ttf */,
 				6A91FFCA4851457A8DED7DD4 /* kg-second-chances.ketch.ttf */,
 				7C4B885A59AA4415A87DCB17 /* kg-second-chances.olid.ttf */,
+				546C5CCA15574965A4538E36 /* Edge Of The Galaxy.otf */,
+				0BF561D43F634ECEBCAA3E42 /* Library 3 AM Soft.otf */,
+				93A42E4A175D459E96C68E11 /* Neoneon.otf */,
+				AD689DF859AB4202A19C162E /* Siti Maesaroh.otf */,
+				0C6F881871384BBC984BFFF3 /* VFD Hypernova.otf */,
+				EB24BF55787F4F3F83952FCD /* Znikomitno25.otf */,
+				21B4343193E345A3B81EBB63 /* 2Peas 4th of July.ttf */,
+				B93A4B8C85DE417C86B8E445 /* 3D Isometric.ttf */,
+				E63F87A053CE42A7A2D6AC76 /* Amadeus.ttf */,
+				6D0BC5BA259F4034AD134B27 /* AristotelianNBP.ttf */,
+				3CC8E99C7DC1436F89E38BB3 /* Brewsky.ttf */,
+				71B0426534884BE58AF457DC /* Cute Aurora.ttf */,
+				2EC9865D8BDE44A193FBBF94 /* Dreamland Stars.ttf */,
+				8B6E586E8F894FBB907F659C /* Dreamland.ttf */,
+				EDB797C063B348E0A6D9C11F /* E1234.ttf */,
+				A40C4FD7585C4A4C9C8B6814 /* Erbos Draco 1st Open NBP.ttf */,
+				0A03BF934E8840EC9A078448 /* Help Me.ttf */,
+				E05A3D0ECDA046A1A13DB93D /* Hexcore.ttf */,
+				E431F117413E4643A4784F1D /* Killen.ttf */,
+				1FBAC844BC194817BCAD078E /* NBP Readout.ttf */,
+				394A48B20B534F9B9EEF947C /* Neon Sans.ttf */,
+				E4294BDD0C014695A8A3786A /* New Walt Disney Ui.ttf */,
+				C54E431490A34106BC28BEC7 /* Novem.ttf */,
+				E3F2BB8D941141A3A8DADD76 /* Nugo Sans.ttf */,
+				99F3B217CE074CEB8FC744D3 /* Parisienne.ttf */,
+				78BB719CFE3B44B89230B7A4 /* Rock.ttf */,
+				FB20462585704B16BD61850B /* RyujinAttack.ttf */,
+				9525C4327ACA476A9C086E87 /* Sacramento.ttf */,
+				CA8DA56394B04DFCB8F7303C /* Star Trek Future.ttf */,
+				EFA2683DEF1D490CB3566A65 /* Time Burner.ttf */,
+				A77D1218810C4CD0B78634F1 /* Wanders.ttf */,
+				465391B569684C73BC1038CD /* a dripping marker.ttf */,
+				17514AC2BA8E4D97A99C62AD /* moonhouse.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -332,6 +431,39 @@
 				3C6C07AF340242CAB8A0388A /* Open 24 Display St.ttf in Resources */,
 				705C4D64E33245E8A211538F /* kg-second-chances.ketch.ttf in Resources */,
 				D66FDD1C263D4F93BE8E922E /* kg-second-chances.olid.ttf in Resources */,
+				3AF334D8B9DE4F829085843B /* Edge Of The Galaxy.otf in Resources */,
+				E10E841F955B4E6DB68F8C18 /* Library 3 AM Soft.otf in Resources */,
+				031EECAE6E914BF4A2064FE2 /* Neoneon.otf in Resources */,
+				F8C495F8735E4785A5319DBB /* Siti Maesaroh.otf in Resources */,
+				78C86F8BAF7047F8B13943DB /* VFD Hypernova.otf in Resources */,
+				7FB01D568FDD4432845A88B3 /* Znikomitno25.otf in Resources */,
+				5C8067BD58754009A7B96455 /* 2Peas 4th of July.ttf in Resources */,
+				150D08505AD14140A16C1128 /* 3D Isometric.ttf in Resources */,
+				296F99C5540C4A9280561122 /* Amadeus.ttf in Resources */,
+				8F7103EB1AAF43118D5DF323 /* AristotelianNBP.ttf in Resources */,
+				6940A3D403084363A9604147 /* Brewsky.ttf in Resources */,
+				5EE4DC250C44458F8B0973FC /* Cute Aurora.ttf in Resources */,
+				0C812816BD98483E8668B432 /* Dreamland Stars.ttf in Resources */,
+				ABAF21ADBF134095A57FD75E /* Dreamland.ttf in Resources */,
+				252D7156E13149CA98F665C9 /* E1234.ttf in Resources */,
+				B7A3CDDF051E411395303E81 /* Erbos Draco 1st Open NBP.ttf in Resources */,
+				605D76D8F8DB451E8B491365 /* Help Me.ttf in Resources */,
+				2AD22A6F546F44A79746DAF2 /* Hexcore.ttf in Resources */,
+				13E8F788BC8F46A58613E691 /* Killen.ttf in Resources */,
+				4F2829CDD9DA4D12BB948322 /* NBP Readout.ttf in Resources */,
+				12FE9459039048E1BBF10F37 /* Neon Sans.ttf in Resources */,
+				9FE3D7E4F1C849AD9C6611D4 /* New Walt Disney Ui.ttf in Resources */,
+				D3CEDDEC9E6B4729BF09E561 /* Novem.ttf in Resources */,
+				A267DF70349040448DAB4644 /* Nugo Sans.ttf in Resources */,
+				0871CD9BED6A4992A2417129 /* Parisienne.ttf in Resources */,
+				448C3DC4B5054E418FAF607A /* Rock.ttf in Resources */,
+				B98066D6A2B742BF96D1097C /* RyujinAttack.ttf in Resources */,
+				9C385012467D459B87E22CAF /* Sacramento.ttf in Resources */,
+				B1706DFE9CC9473E8C453E46 /* Star Trek Future.ttf in Resources */,
+				B4D7E63989024C1687BEFD4F /* Time Burner.ttf in Resources */,
+				E2C491A1A261409D8495EE60 /* Wanders.ttf in Resources */,
+				4808379E24E24195B08BC488 /* a dripping marker.ttf in Resources */,
+				ED1C634750E54F689636730B /* moonhouse.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

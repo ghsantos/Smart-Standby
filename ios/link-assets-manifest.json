@@ -2,12 +2,64 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/2Peas 4th of July.ttf",
+      "sha1": "4779e9e63f9b46b6c73d4fa6fc24eb7d92beb106"
+    },
+    {
+      "path": "assets/fonts/3D Isometric.ttf",
+      "sha1": "629bfc8a01de0a74ae60a717e292bc5ed8b79468"
+    },
+    {
       "path": "assets/fonts/8-Bit Madness.ttf",
       "sha1": "4bab00d090405d97cf5559d08b854da9000d1436"
     },
     {
+      "path": "assets/fonts/Amadeus.ttf",
+      "sha1": "b1c6c89194250d9f734eb5d82cf245105533281b"
+    },
+    {
+      "path": "assets/fonts/AristotelianNBP.ttf",
+      "sha1": "2d6056737cae9aad04e9ce50b42cb96fb4d6be1d"
+    },
+    {
       "path": "assets/fonts/BitMap.ttf",
       "sha1": "2b7bdeb9bb2bf0cdbcb21b9d6f1a14873f609651"
+    },
+    {
+      "path": "assets/fonts/Brewsky.ttf",
+      "sha1": "45c0c229c0583ced2ba8a512fc87dae2e7fe7556"
+    },
+    {
+      "path": "assets/fonts/Cute Aurora.ttf",
+      "sha1": "4d5a53e6cb618d6a3d1aeaff2551d8cd016d0139"
+    },
+    {
+      "path": "assets/fonts/Dreamland Stars.ttf",
+      "sha1": "b409ef3b417126abfa2cb17e66d018fa0e0f48db"
+    },
+    {
+      "path": "assets/fonts/Dreamland.ttf",
+      "sha1": "23f1aa878db9386cad03fe35555823be8b8436c3"
+    },
+    {
+      "path": "assets/fonts/E1234.ttf",
+      "sha1": "5f971a7241b7222af86eaf73a233bb3905e798c5"
+    },
+    {
+      "path": "assets/fonts/Edge Of The Galaxy.otf",
+      "sha1": "7ed1bdbde7b14760d879ab61f04cb0a7bd71be19"
+    },
+    {
+      "path": "assets/fonts/Erbos Draco 1st Open NBP.ttf",
+      "sha1": "c798a038d2fb6391ffa8d00fca236c77a0b36ac8"
+    },
+    {
+      "path": "assets/fonts/Help Me.ttf",
+      "sha1": "8aa18c7fc920d5104fdbdb667a7eab764a31de3f"
+    },
+    {
+      "path": "assets/fonts/Hexcore.ttf",
+      "sha1": "e8661851410cd7ea6198feaa9dcd10a388b665c7"
     },
     {
       "path": "assets/fonts/Intellecta Digital.ttf",
@@ -18,6 +70,10 @@
       "sha1": "c6feb3d2b900dec157b8b1050c03098b1d54e0f2"
     },
     {
+      "path": "assets/fonts/Killen.ttf",
+      "sha1": "2d3950964c1d95abed482bea14bf7b7f8686da18"
+    },
+    {
       "path": "assets/fonts/LCDDot TR.ttf",
       "sha1": "ad2992110ad98e2f3ed35afce61c4bf20e97731f"
     },
@@ -26,8 +82,80 @@
       "sha1": "8f898b1ff95ac829cba51a7755fd8d1754edb162"
     },
     {
+      "path": "assets/fonts/Library 3 AM Soft.otf",
+      "sha1": "8a3d3c79cc05f820b1214ae87ec19471d5ca4280"
+    },
+    {
+      "path": "assets/fonts/NBP Readout.ttf",
+      "sha1": "f1ad5f94ee0da91153038ba291d209a6386ce4c4"
+    },
+    {
+      "path": "assets/fonts/Neon Sans.ttf",
+      "sha1": "a337895035e864f4e388d1c3b3d94efc6e941045"
+    },
+    {
+      "path": "assets/fonts/Neoneon.otf",
+      "sha1": "c63d045deb975f3684f2eed7b2fe2019f1622ea7"
+    },
+    {
+      "path": "assets/fonts/New Walt Disney Ui.ttf",
+      "sha1": "d2dda4fc17493f05ee60235a9f36715ffce9b421"
+    },
+    {
+      "path": "assets/fonts/Novem.ttf",
+      "sha1": "bd878e89d8a9451f9c8283e1c2fb272b5f7d1f1a"
+    },
+    {
+      "path": "assets/fonts/Nugo Sans.ttf",
+      "sha1": "b1cafc0638d44d6f8b88ab3c71e54c16fee1941a"
+    },
+    {
       "path": "assets/fonts/Open 24 Display St.ttf",
       "sha1": "1cd1baf16d47a3855bc01bcf87986ef0e11af021"
+    },
+    {
+      "path": "assets/fonts/Parisienne.ttf",
+      "sha1": "38ab1f96d6ae368ee21c690fbdbe3913f3ec6372"
+    },
+    {
+      "path": "assets/fonts/Rock.ttf",
+      "sha1": "6d06b94761c4ba5547edf90cc2a1958efe4c33b1"
+    },
+    {
+      "path": "assets/fonts/RyujinAttack.ttf",
+      "sha1": "7586897cdafcb493e889cf43fa1df4943580e9b5"
+    },
+    {
+      "path": "assets/fonts/Sacramento.ttf",
+      "sha1": "e3a869a44de0fe66d2a43c5101a9c721c3185553"
+    },
+    {
+      "path": "assets/fonts/Siti Maesaroh.otf",
+      "sha1": "28948f0952f22b3e8e9cc14c797af74fcecd4228"
+    },
+    {
+      "path": "assets/fonts/Star Trek Future.ttf",
+      "sha1": "4a6fa00e7430aae38e1e6b45dd1a42c6c21db0a3"
+    },
+    {
+      "path": "assets/fonts/Time Burner.ttf",
+      "sha1": "bc61a9447e2d6221fe88a219b4fd91245e4ab762"
+    },
+    {
+      "path": "assets/fonts/VFD Hypernova.otf",
+      "sha1": "d22329c8774ab8a76c370cda144858a456022ce1"
+    },
+    {
+      "path": "assets/fonts/Wanders.ttf",
+      "sha1": "e4ed048ef5aca6d77e5646d661e4f05b74afb047"
+    },
+    {
+      "path": "assets/fonts/Znikomitno25.otf",
+      "sha1": "4e8ad459d436088db847ae4679375d2496f68def"
+    },
+    {
+      "path": "assets/fonts/a dripping marker.ttf",
+      "sha1": "74a4c24002bb44521b2a877e8919250c1e133617"
     },
     {
       "path": "assets/fonts/fontello.ttf",
@@ -40,6 +168,10 @@
     {
       "path": "assets/fonts/kg-second-chances.olid.ttf",
       "sha1": "a7ecfe045e51b1fdefad179cf18f5a313f8c5956"
+    },
+    {
+      "path": "assets/fonts/moonhouse.ttf",
+      "sha1": "81010b760b4e4f58e5be3ce8cbc8f6cf14ca5ed9"
     }
   ]
 }
