@@ -28,7 +28,7 @@ export const Clock = ({ styleAnimated }: ClockProps) => {
 
   return (
     <Animated.View
-      style={[styles.background, styleAnimated]}
+      style={[styles.clockBackground, styleAnimated]}
       // sharedTransitionTag="tag"
     >
       <View
@@ -46,6 +46,8 @@ export const Clock = ({ styleAnimated }: ClockProps) => {
               fontFamily: clockSettings.timeFont,
             },
           ]}
+          adjustsFontSizeToFit
+          numberOfLines={1}
         >
           {dayTime.format('HH:mm')}
         </Text>
@@ -80,6 +82,10 @@ const ClockScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   background: {
+    flex: 1,
+    backgroundColor: '#0f1422',
+  },
+  clockBackground: {
     flex: 1,
   },
   container: {

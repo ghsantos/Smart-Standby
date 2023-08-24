@@ -13,6 +13,8 @@ import 'dayjs/locale/pt-br'
 import { fonts } from '../../utils/fonts'
 import { Clock } from '.'
 import { useClockSettingsStorage } from '../../hooks/storage'
+import FontConfig from './FontConfig'
+import ColorConfig from './ColorConfig'
 
 dayjs.locale('pt-br')
 
@@ -20,6 +22,29 @@ const windowWidth = Math.max(
   Dimensions.get('window').width,
   Dimensions.get('window').height,
 )
+
+const windowHeight = Math.min(
+  Dimensions.get('window').width,
+  Dimensions.get('window').height,
+)
+
+type ConfigTypeItem = 'font' | 'fontSize' | 'color'
+
+type ConfigItem = {
+  id: string
+  name: string
+  type: ConfigTypeItem
+}
+
+const configItens: ConfigItem[] = [
+  { id: 'background', name: 'Background', type: 'color' },
+  { id: 'timeFont', name: 'Font', type: 'font' },
+  { id: 'timeSize', name: 'Size', type: 'fontSize' },
+  // { name: '', id: '', type: '' },
+  // { name: '', id: '', type: '' },
+  // { name: '', id: '', type: '' },
+  // { name: '', id: '', type: '' },
+]
 
 const Configuration = ({ navigation }) => {
   const [clockSettings, setClockSettings] = useClockSettingsStorage()
@@ -39,19 +64,24 @@ const Configuration = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{ flex: 1 }}>
-        <ScrollView>
-          {fonts.map(font => (
-            <TouchableOpacity
-              key={font.name}
-              onPress={() =>
-                setClockSettings({ ...clockSettings, timeFont: font.value })
-              }
-            >
-              <Text style={{ color: '#fff', padding: 8 }}>{font.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
+      <View style={{ flex: 1, flexDirection: 'row' }}>
+        {/* <FontConfig
+          fonts={fonts}
+          selected={clockSettings.timeFont}
+          onPress={font =>
+            setClockSettings({ ...clockSettings, timeFont: font.family })
+          }
+        /> */}
+        <ColorConfig />
+        <View style={{ flex: 3 }}>
+          <ScrollView>
+            {configItens.map(item => (
+              <TouchableOpacity key={item.id} onPress={() => {}}>
+                <Text style={{ color: '#fff', padding: 8, fontSize: 20 }}>{item.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
       </View>
     </View>
   )
@@ -66,11 +96,18 @@ const styles = StyleSheet.create({
   clockContainer: {
     width: windowWidth,
     height: '100%',
+    // backgroundColor: '#f005',
     position: 'absolute',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   clock: {
     borderRadius: 16,
-    transform: [{ scale: 0.5 }, { translateX: -(windowWidth / 2) }],
+    transform: [{ scale: 0.5 }],
+    // top: windowHeight / 4,
+    left: -(windowWidth / 4),
+    // left: -(windowWidth / 4),
+    // transform: [{ scale: 0.5 }, { translateX: -(windowWidth / 2) }],
   },
   button: {
     padding: 12,
