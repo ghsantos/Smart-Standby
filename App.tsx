@@ -19,6 +19,7 @@ import MusicPlayer from './src/screens/MusicPlayer'
 import DigitalRain from './src/screens/DigitalRain'
 import ClockScreen from './src/screens/ClockScreen'
 import ClockConfiguration from './src/screens/ClockScreen/Configuration'
+import AnimeClock from './src/screens/AnimeClock'
 
 // import { HelloWorld } from './src/screens/Test'
 
@@ -29,6 +30,7 @@ function TabScreens() {
   return (
     <Tab.Navigator tabBar={() => null} offscreenPageLimit={1}>
       {/* <Tab.Screen name="test" component={HelloWorld} /> */}
+      <Tab.Screen name="animeClock" component={AnimeClock} />
       <Tab.Screen name="clock" component={ClockScreen} />
       <Tab.Screen name="home" component={HomeScreen} />
       <Tab.Screen name="player" component={MusicPlayer} />

@@ -86,6 +86,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   container: {
-    flex: 1,
+    flex: 4,
   },
 })

@@ -29,7 +29,7 @@ export const Clock = ({ styleAnimated }: ClockProps) => {
   return (
     <Animated.View
       style={[styles.clockBackground, styleAnimated]}
-      // sharedTransitionTag="tag"
+      sharedTransitionTag="tag"
     >
       <View
         style={[
