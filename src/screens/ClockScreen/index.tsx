@@ -18,9 +18,10 @@ dayjs.locale('pt-br')
 
 export interface ClockProps {
   styleAnimated: StyleProp<Animated.AnimateStyle<StyleProp<ViewStyle>>>
+  noBackground?: boolean
 }
 
-export const Clock = ({ styleAnimated }: ClockProps) => {
+export const Clock = ({ styleAnimated, noBackground }: ClockProps) => {
   const time = useTime()
   const [clockSettings] = useClockSettingsStorage()
 
@@ -34,7 +35,11 @@ export const Clock = ({ styleAnimated }: ClockProps) => {
       <View
         style={[
           styles.container,
-          { backgroundColor: clockSettings.background },
+          {
+            backgroundColor: noBackground
+              ? 'transparent'
+              : clockSettings.background,
+          },
         ]}
       >
         <Text
@@ -95,9 +100,15 @@ const styles = StyleSheet.create({
   },
   time: {
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 12,
   },
   date: {
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 1, height: 0 },
+    textShadowRadius: 5,
   },
 })
 
