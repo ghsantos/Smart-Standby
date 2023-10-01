@@ -1,15 +1,6 @@
-import React, { useRef } from 'react'
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native'
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-} from 'react-native-reanimated'
+import React from 'react'
+import { StyleSheet, View, useWindowDimensions } from 'react-native'
+import Animated, { useSharedValue } from 'react-native-reanimated'
 
 import ColorPicker, {
   Panel1,
@@ -17,36 +8,50 @@ import ColorPicker, {
   OpacitySlider,
   HueSlider,
   colorKit,
-  PreviewText,
+  Preview,
+  returnedResults,
 } from 'reanimated-color-picker'
 
-export default function ColorConfig() {
-  const customSwatches = new Array(6)
+interface ColorConfigProps {
+  currentColor: string
+  defaultColor: string
+}
+
+export default function ColorConfig({
+  currentColor,
+  defaultColor,
+}: ColorConfigProps) {
+  const { height, width } = useWindowDimensions()
+
+  const customSwatches = new Array(width < 600 ? 5 : 6)
     .fill('#fff')
     .map(() => colorKit.randomRgbColor().hex())
 
-  const selectedColor = useSharedValue(customSwatches[0])
-  const backgroundColorStyle = useAnimatedStyle(() => ({
-    backgroundColor: selectedColor.value,
-  }))
+  customSwatches[0] = currentColor
+  customSwatches[1] = defaultColor
 
-  const onColorSelect = color => {
+  const selectedColor = useSharedValue(currentColor)
+
+  const onColorSelect = (color: returnedResults) => {
     selectedColor.value = color.hex
   }
+
+  const painelHeight = height * 0.47
 
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.animatedContainer]}>
-        <View style={styles.pickerContainer}>
-          <ColorPicker
-            value={selectedColor.value}
-            sliderThickness={25}
-            thumbSize={24}
-            thumbShape="circle"
-            onChange={onColorSelect}
-            boundedThumb
-          >
-            <Panel1 style={styles.panelStyle} />
+        <ColorPicker
+          value={selectedColor.value}
+          sliderThickness={25}
+          thumbSize={24}
+          thumbShape="circle"
+          onChange={onColorSelect}
+          boundedThumb
+        >
+          <View style={styles.pickerContent}>
+            <Preview style={styles.previewStyle} />
+            <Panel1 style={[styles.panelStyle, { height: painelHeight }]} />
             <HueSlider style={styles.sliderStyle} />
             <OpacitySlider style={styles.sliderStyle} />
             <Swatches
@@ -54,11 +59,8 @@ export default function ColorConfig() {
               swatchStyle={styles.swatchStyle}
               colors={customSwatches}
             />
-            <View style={styles.previewTxtContainer}>
-              <PreviewText style={{ color: '#707070' }} />
-            </View>
-          </ColorPicker>
-        </View>
+          </View>
+        </ColorPicker>
       </Animated.View>
     </View>
   )
@@ -67,31 +69,18 @@ export default function ColorConfig() {
 const styles = StyleSheet.create({
   container: {
     flex: 4,
-    // backgroundColor: '#f00',
     paddingHorizontal: 4,
     paddingVertical: 10,
   },
   animatedContainer: {
     flex: 1,
+    marginBottom: 12,
   },
-  pickerContainer: {
-    // alignSelf: 'center',
-    // width: 300,
-    // backgroundColor: '#fff',
-    // padding: 8,
-    borderRadius: 20,
-    // shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 5,
-    // },
-    // shadowOpacity: 0.34,
-    // shadowRadius: 6.27,
-
-    // elevation: 10,
+  pickerContent: {
+    justifyContent: 'space-between',
+    height: '100%',
   },
   panelStyle: {
-    // flex: 1,
     borderRadius: 16,
 
     shadowColor: '#000',
@@ -106,7 +95,6 @@ const styles = StyleSheet.create({
   },
   sliderStyle: {
     borderRadius: 20,
-    marginTop: 20,
 
     shadowColor: '#000',
     shadowOffset: {
@@ -118,23 +106,22 @@ const styles = StyleSheet.create({
 
     elevation: 5,
   },
-  previewTxtContainer: {
-    marginTop: 20,
-  },
   swatchesContainer: {
-    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'space-between',
     flexWrap: 'nowrap',
-    // gap: 8,
   },
   swatchStyle: {
     borderRadius: 20,
     height: 30,
     width: 30,
-    margin: 0,
     marginBottom: 0,
     marginHorizontal: 0,
     marginVertical: 0,
+  },
+  previewStyle: {
+    height: 38,
+    borderRadius: 12,
+    width: '99.9%',
   },
 })

@@ -65,14 +65,14 @@ const Configuration = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        <FontConfig
+        {/* <FontConfig
           fonts={fonts}
           selected={clockSettings.timeFont}
           onPress={font =>
             setClockSettings({ ...clockSettings, timeFont: font.family })
           }
-        />
-        {/* <ColorConfig /> */}
+        /> */}
+        <ColorConfig currentColor="#120015" defaultColor="#080B12" />
         <View style={{ flex: 3 }}>
           <ScrollView>
             {configItens.map(item => (
@@ -89,7 +89,7 @@ const Configuration = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: '#0f1422',
+    backgroundColor: '#1d2028',
     flex: 1,
     flexDirection: 'row',
   },

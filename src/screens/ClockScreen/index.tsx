@@ -27,6 +27,10 @@ export const Clock = ({ styleAnimated, noBackground }: ClockProps) => {
 
   const dayTime = dayjs(time)
 
+  const backgroundColor = noBackground
+    ? 'transparent'
+    : clockSettings.background
+
   return (
     <Animated.View
       style={[styles.clockBackground, styleAnimated]}
@@ -36,9 +40,7 @@ export const Clock = ({ styleAnimated, noBackground }: ClockProps) => {
         style={[
           styles.container,
           {
-            backgroundColor: noBackground
-              ? 'transparent'
-              : clockSettings.background,
+            backgroundColor,
           },
         ]}
       >
