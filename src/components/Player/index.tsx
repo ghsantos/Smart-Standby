@@ -4,7 +4,7 @@ import SystemNavigationBar from 'react-native-system-navigation-bar'
 import { useStringStorage } from '../../hooks/storage'
 import { singletonHook } from 'react-singleton-hook'
 
-const PORT = '3000'
+const PORT = '4044'
 const URL = 'http://192.168.31.75'
 
 const socket = io(`${URL}:${PORT}`)
