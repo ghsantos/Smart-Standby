@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
+import { useTime } from '../../hooks/time'
 
 dayjs.locale('pt-br')
-// import { getDate } from '../../utils'
 
 function Clock(): JSX.Element {
-  const [time, setTime] = useState(new Date())
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const date = new Date()
-      setTime(date)
-    }, 1000)
-
-    return function cleanup() {
-      clearInterval(interval)
-    }
-  }, [])
+  const time = useTime()
 
   const dayTime = dayjs(time)
 
