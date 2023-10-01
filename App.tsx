@@ -33,8 +33,8 @@ function TabScreens() {
       {/* <Tab.Screen name="test" component={HelloWorld} /> */}
       <Tab.Screen name="clock" component={ClockScreen} />
       <Tab.Screen name="home" component={HomeScreen} />
-      <Tab.Screen name="animeClock" component={AnimeClock} />
       <Tab.Screen name="player" component={MusicPlayer} />
+      <Tab.Screen name="animeClock" component={AnimeClock} />
       <Tab.Screen name="wallpaperClock" component={WallpaperClock} />
       <Tab.Screen name="matrix" component={DigitalRain} />
     </Tab.Navigator>
