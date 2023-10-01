@@ -21,7 +21,7 @@ type ClockSettings = {
   dateColor: string
 }
 
-const defaultClockSettings: ClockSettings = {
+export const defaultClockSettings: ClockSettings = {
   background: '#080B12',
   timeSize: 160,
   timeFont: 'Josefin Sans',

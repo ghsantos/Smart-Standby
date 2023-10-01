@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, View, useWindowDimensions } from 'react-native'
 import Animated, { useSharedValue } from 'react-native-reanimated'
 
@@ -15,25 +15,39 @@ import ColorPicker, {
 interface ColorConfigProps {
   currentColor: string
   defaultColor: string
+  onChange: (font: string) => void
 }
 
 export default function ColorConfig({
   currentColor,
   defaultColor,
+  onChange,
 }: ColorConfigProps) {
   const { height, width } = useWindowDimensions()
 
-  const customSwatches = new Array(width < 600 ? 5 : 6)
-    .fill('#fff')
-    .map(() => colorKit.randomRgbColor().hex())
+  const [customSwatches, setCustomSwatches] = useState(
+    new Array(width < 600 ? 5 : 6).fill('#fff'),
+  )
 
-  customSwatches[0] = currentColor
-  customSwatches[1] = defaultColor
+  useEffect(() => {
+    const swatches = new Array(width < 600 ? 5 : 6)
+      .fill('#fff')
+      .map(() => colorKit.randomRgbColor().hex())
+
+    swatches[0] = currentColor
+    swatches[1] = defaultColor
+
+    setCustomSwatches(swatches)
+  }, [width])
 
   const selectedColor = useSharedValue(currentColor)
 
   const onColorSelect = (color: returnedResults) => {
     selectedColor.value = color.hex
+  }
+
+  const onComplete = (color: returnedResults) => {
+    onChange(color.hex)
   }
 
   const painelHeight = height * 0.47
@@ -47,6 +61,7 @@ export default function ColorConfig({
           thumbSize={24}
           thumbShape="circle"
           onChange={onColorSelect}
+          onComplete={onComplete}
           boundedThumb
         >
           <View style={styles.pickerContent}>

@@ -12,7 +12,10 @@ import 'dayjs/locale/pt-br'
 
 import { fonts } from '../../utils/fonts'
 import { Clock } from '.'
-import { useClockSettingsStorage } from '../../hooks/storage'
+import {
+  defaultClockSettings,
+  useClockSettingsStorage,
+} from '../../hooks/storage'
 import FontConfig from './FontConfig'
 import ColorConfig from './ColorConfig'
 
@@ -72,12 +75,20 @@ const Configuration = ({ navigation }) => {
             setClockSettings({ ...clockSettings, timeFont: font.family })
           }
         /> */}
-        <ColorConfig currentColor="#120015" defaultColor="#080B12" />
+        <ColorConfig
+          currentColor={clockSettings.background}
+          defaultColor={defaultClockSettings.background}
+          onChange={color =>
+            setClockSettings({ ...clockSettings, background: color })
+          }
+        />
         <View style={{ flex: 3 }}>
           <ScrollView>
             {configItens.map(item => (
               <TouchableOpacity key={item.id} onPress={() => {}}>
-                <Text style={{ color: '#fff', padding: 8, fontSize: 20 }}>{item.name}</Text>
+                <Text style={{ color: '#fff', padding: 8, fontSize: 20 }}>
+                  {item.name}
+                </Text>
               </TouchableOpacity>
             ))}
           </ScrollView>
