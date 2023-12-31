@@ -47,7 +47,7 @@ function generateRandomGraphData(length: number): GraphPoint[] {
 }
 
 function formatTime(progressSeconds: number): string {
-  if (progressSeconds == undefined || progressSeconds < 0) {
+  if (progressSeconds === undefined || progressSeconds < 0) {
     return '00:00'
   }
 
@@ -72,4 +72,37 @@ function formatTime(progressSeconds: number): string {
     .padStart(2, '0')}`
 }
 
-export { getDate, generateRandomGraphData, formatTime }
+function formatTimeToName(progressSeconds: number): string {
+  if (progressSeconds === undefined || progressSeconds < 0) {
+    return '0 minutos'
+  }
+
+  const progressSecondsWithoutMilliseconds: number = Math.floor(progressSeconds)
+
+  const hours: number = Math.floor(
+    progressSecondsWithoutMilliseconds / (60 * 60),
+  )
+  const minutes: number =
+    Math.floor(progressSecondsWithoutMilliseconds / 60) % 60
+
+  const seconds: number = progressSecondsWithoutMilliseconds % 60
+
+  const hourName = hours > 1 ? 'horas' : 'hora'
+  const minuteName = minutes > 1 ? 'minutos' : 'minuto'
+
+  if (hours > 0 && minutes === 0) {
+    return `${hours.toString()} ${hourName}`
+  }
+
+  if (hours > 0) {
+    return `${hours.toString()} ${hourName} e ${minutes.toString()} ${minuteName}`
+  }
+
+  if (minutes > 0) {
+    return `${minutes.toString()} ${minuteName}`
+  }
+
+  return `${seconds} segundos`
+}
+
+export { getDate, generateRandomGraphData, formatTime, formatTimeToName }
