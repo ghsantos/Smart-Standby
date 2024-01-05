@@ -1,3 +1,3 @@
 # Monitor
 
-![Screenshot](images/app.png)
+![Screenshot](images/preview.png)
