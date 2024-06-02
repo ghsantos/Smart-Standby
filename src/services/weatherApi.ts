@@ -222,6 +222,7 @@ async function fetchWeather() {
       'https://api.hgbrasil.com/weather?woeid=456526',
     )
     const json = await response.json()
+    // console.log('json', json) // json {"error": true, "message": "IP bloqueado: Limite diario sem chave excedido, acesse console.hgbrasil.com para criar uma chave de API.", "results": {}}
 
     return json.results
   } catch (error) {

@@ -10,9 +10,14 @@ function Weather(): JSX.Element {
   const [weather, setWeather] = useState(null)
 
   const fetchData = async () => {
-    const data = await fetchWeather()
+    try {
+      const data = await fetchWeather()
 
-    setWeather({ ...data, forecast: data.forecast.slice(1) })
+      // console.log('data.forecast', data)
+      setWeather({ ...data, forecast: data.forecast.slice(1) })
+    } catch (error) {
+      console.log('error', error)
+    }
   }
 
   useEffect(() => {

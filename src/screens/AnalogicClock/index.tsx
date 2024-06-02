@@ -31,7 +31,7 @@ const transformOriginWorklet = (
 export default function AnalogicClock() {
   const { height } = Dimensions.get('window')
 
-  const time = useTime()
+  const time = useTime(998)
 
   const dayTime = dayjs(time)
 
@@ -92,7 +92,7 @@ export default function AnalogicClock() {
   })
 
   return (
-    <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+    <View style={styles.container}>
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '0deg' }] }]} />
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '30deg' }] }]} />
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '60deg' }] }]} />
@@ -115,6 +115,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#0f1422',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tick: {
     backgroundColor: '#fff',

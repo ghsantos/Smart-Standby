@@ -57,65 +57,63 @@ function FullScreenPlayer({
         isLandscape ? styles.containerHorizontal : styles.containerVertical
       }
     >
-      {isConnected && (
-        <>
-          <View style={styles.coverContainer}>
-            <View style={{ width: 270, height: 270 }}>
-              {!!coverImage && (
-                <Image
-                  source={{ uri: coverImage }}
-                  style={styles.coverImage}
-                  resizeMode="stretch"
-                />
-              )}
-            </View>
+      <View style={styles.coverContainer}>
+        <View style={styles.emptyCoverImage}>
+          {isConnected && coverImage ? (
+            <Image
+              source={{ uri: coverImage }}
+              style={styles.coverImage}
+              resizeMode="stretch"
+            />
+          ) : (
+            <Icon name="musical-note" size={116} color="#eee" />
+          )}
+        </View>
+      </View>
+      <View style={styles.trackContainer}>
+        <View style={{ height: 60 }} />
+
+        <View style={styles.titleContainer}>
+          <Text style={styles.title} numberOfLines={1}>
+            {trackState.trackTitle}
+          </Text>
+          <Text style={styles.subTitle} numberOfLines={1}>
+            {trackState.artist}
+          </Text>
+        </View>
+
+        <View style={styles.controls}>
+          <TouchableOpacity onPress={onPressPrev}>
+            <Icon name="play-skip-back-outline" size={54} color="#eee" />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={onPressPlayPause}>
+            {trackState.isPlaying ? (
+              <Icon name="pause-outline" size={60} color="#eee" />
+            ) : (
+              <Icon name="play-outline" size={60} color="#eee" />
+            )}
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onPressNext}>
+            <Icon name="play-skip-forward-outline" size={54} color="#eee" />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.playbackContainer}>
+          <View style={styles.progressContainer}>
+            <Animated.View style={progressStyle} />
           </View>
-          <View style={styles.trackContainer}>
-            <View style={{ height: 60 }} />
 
-            <View style={styles.titleContainer}>
-              <Text style={styles.title} numberOfLines={1}>
-                {trackState.trackTitle}
-              </Text>
-              <Text style={styles.subTitle} numberOfLines={1}>
-                {trackState.artist}
-              </Text>
-            </View>
-
-            <View style={styles.controls}>
-              <TouchableOpacity onPress={onPressPrev}>
-                <Icon name="play-skip-back-outline" size={54} color="#eee" />
-              </TouchableOpacity>
-
-              <TouchableOpacity onPress={onPressPlayPause}>
-                {trackState.isPlaying ? (
-                  <Icon name="pause-outline" size={60} color="#eee" />
-                ) : (
-                  <Icon name="play-outline" size={60} color="#eee" />
-                )}
-              </TouchableOpacity>
-              <TouchableOpacity onPress={onPressNext}>
-                <Icon name="play-skip-forward-outline" size={54} color="#eee" />
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.playbackContainer}>
-              <View style={styles.progressContainer}>
-                <Animated.View style={progressStyle} />
-              </View>
-
-              <View style={styles.trackTimeContainer}>
-                <Text style={styles.trackTime}>
-                  {formatTime(playbackProgress.progressSeconds)}
-                </Text>
-                <Text style={styles.trackTime}>
-                  {formatTime(playbackProgress.totalSeconds)}
-                </Text>
-              </View>
-            </View>
+          <View style={styles.trackTimeContainer}>
+            <Text style={styles.trackTime}>
+              {formatTime(playbackProgress.progressSeconds)}
+            </Text>
+            <Text style={styles.trackTime}>
+              {formatTime(playbackProgress.totalSeconds)}
+            </Text>
           </View>
-        </>
-      )}
+        </View>
+      </View>
     </View>
   )
 }
@@ -138,6 +136,14 @@ const styles = StyleSheet.create({
     width: 270,
     height: 270,
     borderRadius: 12,
+  },
+  emptyCoverImage: {
+    width: 270,
+    height: 270,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#181b20',
   },
   trackContainer: {
     flex: 1,

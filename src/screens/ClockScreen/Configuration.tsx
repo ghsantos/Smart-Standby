@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Dimensions,
   ScrollView,
@@ -52,6 +52,8 @@ const configItens: ConfigItem[] = [
 const Configuration = ({ navigation }) => {
   const [clockSettings, setClockSettings] = useClockSettingsStorage()
 
+  const [page, setPage] = useState(0)
+
   return (
     <View style={styles.background}>
       <View style={{ flex: 1 }}>
@@ -68,24 +70,30 @@ const Configuration = ({ navigation }) => {
         </View>
       </View>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        {/* <FontConfig
-          fonts={fonts}
-          selected={clockSettings.timeFont}
-          onPress={font =>
-            setClockSettings({ ...clockSettings, timeFont: font.family })
-          }
-        /> */}
-        <ColorConfig
-          currentColor={clockSettings.background}
-          defaultColor={defaultClockSettings.background}
-          onChange={color =>
-            setClockSettings({ ...clockSettings, background: color })
-          }
-        />
+        <View style={{ flex: 4 }}>
+          {page === 0 && (
+            <ColorConfig
+              currentColor={clockSettings.background}
+              defaultColor={defaultClockSettings.background}
+              onChange={color =>
+                setClockSettings({ ...clockSettings, background: color })
+              }
+            />
+          )}
+          {page === 1 && (
+            <FontConfig
+              fonts={fonts}
+              selected={clockSettings.timeFont}
+              onPress={font =>
+                setClockSettings({ ...clockSettings, timeFont: font.family })
+              }
+            />
+          )}
+        </View>
         <View style={{ flex: 3 }}>
           <ScrollView>
-            {configItens.map(item => (
-              <TouchableOpacity key={item.id} onPress={() => {}}>
+            {configItens.map((item, index) => (
+              <TouchableOpacity key={item.id} onPress={() => setPage(index)}>
                 <Text style={{ color: '#fff', padding: 8, fontSize: 20 }}>
                   {item.name}
                 </Text>
