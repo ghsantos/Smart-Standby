@@ -47,10 +47,10 @@ function Weather(): JSX.Element {
         </View>
 
         <View style={styles.variationContainer}>
-          <Icon name="ios-arrow-up-outline" size={24} color="#eee" />
+          <Icon name="arrow-up-outline" size={24} color="#eee" />
           <Text style={styles.text}>{weather?.forecast[0].max}°</Text>
 
-          <Icon name="ios-arrow-down-outline" size={24} color="#eee" />
+          <Icon name="arrow-down-outline" size={24} color="#eee" />
           <Text style={styles.text}>{weather?.forecast[0].min}°</Text>
         </View>
         {/* <Text style={styles.text}>{weather?.forecast[0].max} max, {weather?.forecast[0].min} mim</Text> */}
