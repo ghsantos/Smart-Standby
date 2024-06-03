@@ -70,10 +70,10 @@ function SmallPlayer({
 
           <View style={styles.controls}>
             <TouchableOpacity onPress={() => setIsEditing(!isEditing)}>
-              <Icon name="ios-create-outline" size={40} color="#eee" />
+              <Icon name="create-outline" size={40} color="#eee" />
             </TouchableOpacity>
             <TouchableOpacity onPress={onPressReconnect}>
-              <Icon name="ios-refresh" size={40} color="#eee" />
+              <Icon name="refresh" size={40} color="#eee" />
             </TouchableOpacity>
           </View>
         </>

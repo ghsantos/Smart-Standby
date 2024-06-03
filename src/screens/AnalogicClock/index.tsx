@@ -100,13 +100,13 @@ export default function AnalogicClock() {
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '120deg' }] }]} />
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '150deg' }] }]} />
 
-      <View style={styles.innerFace}>
+      {/* <View style={styles.innerFace}>
         <Animated.View style={secsStyle} />
         <Animated.View style={minsStyle} />
-        <Animated.View style={hoursStyle} />
+        <Animated.View style={hoursStyle} /> */}
 
         {/* <View style={{ backgroundColor: '#ff7070', width: 12, height: 12, borderRadius: 6, left: 0, top: -1 }} /> */}
-      </View>
+      {/* </View> */}
     </View>
   )
 }

@@ -2,13 +2,13 @@ import React from 'react'
 import { Text, View, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 import {
   Canvas,
-  Easing,
+  // Easing,
   Group,
   LinearGradient,
   RoundedRect,
-  runTiming,
-  useComputedValue,
-  useValue,
+  // runTiming,
+  // useComputedValue,
+  // useValue,
   vec,
   mix,
 } from '@shopify/react-native-skia'
@@ -42,30 +42,30 @@ const getDuration = (current: number, next: number) => {
 }
 
 export const Selection = ({ graphs, onPressItem }: SelectionProps) => {
-  const transition = useValue(0)
-  const state = useValue({
-    next: 0,
-    current: 0,
-  })
+  // const transition = useValue(0)
+  // const state = useValue({
+  //   next: 0,
+  //   current: 0,
+  // })
 
-  const transform = useComputedValue(() => {
-    const { current, next } = state.current
-    return [
-      {
-        translateX: mix(
-          transition.current,
-          current * buttonWidth,
-          next * buttonWidth,
-        ),
-      },
-    ]
-  }, [state, transition])
+  // const transform = useComputedValue(() => {
+  //   const { current, next } = state.current
+  //   return [
+  //     {
+  //       translateX: mix(
+  //         transition.current,
+  //         current * buttonWidth,
+  //         next * buttonWidth,
+  //       ),
+  //     },
+  //   ]
+  // }, [state, transition])
 
   return (
     <View style={styles.root}>
       <View style={styles.container}>
         <Canvas style={StyleSheet.absoluteFill}>
-          <Group transform={transform}>
+          {/* <Group transform={transform}>
             <RoundedRect x={0} y={0} height={40} width={buttonWidth} r={16}>
               <LinearGradient
                 colors={['#009095', '#008e47']}
@@ -73,7 +73,7 @@ export const Selection = ({ graphs, onPressItem }: SelectionProps) => {
                 end={vec(buttonWidth, 40)}
               />
             </RoundedRect>
-          </Group>
+          </Group> */}
         </Canvas>
 
         {graphs.map((graph, index) => (
@@ -82,16 +82,16 @@ export const Selection = ({ graphs, onPressItem }: SelectionProps) => {
             onPress={() => {
               onPressItem(graph)
 
-              state.current = { current: state.current.next, next: index }
-              transition.current = 0
+              // state.current = { current: state.current.next, next: index }
+              // transition.current = 0
 
-              runTiming(transition, 1, {
-                duration: getDuration(
-                  state.current.current,
-                  state.current.next,
-                ),
-                easing: Easing.inOut(Easing.cubic),
-              })
+              // runTiming(transition, 1, {
+              //   duration: getDuration(
+              //     state.current.current,
+              //     state.current.next,
+              //   ),
+              //   easing: Easing.inOut(Easing.cubic),
+              // })
             }}
           >
             <View style={styles.button}>
