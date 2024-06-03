@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { View, StyleSheet, Dimensions } from 'react-native'
 import Animated, {
   useAnimatedStyle,
@@ -45,11 +45,16 @@ export default function AnalogicClock() {
   const minsDeg = useSharedValue(0)
   const hoursDeg = useSharedValue(0)
 
-  useEffect(() => {
+  const updateValue = useCallback(() => {
+    'worklet'
     secsDeg.value = (seconds / 60) * 360 + 180
     minsDeg.value = (minutes / 60) * 360 + (seconds / 60) * 6 + 180
     hoursDeg.value = (hours / 12) * 360 + (minutes / 60) * 30 + 180
   }, [seconds, minutes, hours, secsDeg, minsDeg, hoursDeg])
+
+  useEffect(() => {
+    updateValue()
+  }, [updateValue])
 
   const secsStyle = useAnimatedStyle(() => {
     return {
@@ -100,13 +105,13 @@ export default function AnalogicClock() {
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '120deg' }] }]} />
       <View style={[styles.tick, { height: height * 2.5, transform: [{ rotate: '150deg' }] }]} />
 
-      {/* <View style={styles.innerFace}>
+      <View style={styles.innerFace}>
         <Animated.View style={secsStyle} />
         <Animated.View style={minsStyle} />
-        <Animated.View style={hoursStyle} /> */}
+        <Animated.View style={hoursStyle} />
 
         {/* <View style={{ backgroundColor: '#ff7070', width: 12, height: 12, borderRadius: 6, left: 0, top: -1 }} /> */}
-      {/* </View> */}
+      </View>
     </View>
   )
 }

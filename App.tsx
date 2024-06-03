@@ -15,12 +15,12 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SingletonHooksContainer } from 'react-singleton-hook'
 
 import HomeScreen from './src/screens/Home'
-// import MusicPlayer from './src/screens/MusicPlayer'
+import MusicPlayer from './src/screens/MusicPlayer'
 // import DigitalRain from './src/screens/DigitalRain'
 import ClockScreen from './src/screens/ClockScreen'
 import ClockConfiguration from './src/screens/ClockScreen/Configuration'
-// import AnimeClock from './src/screens/AnimeClock'
-// import WallpaperClock from './src/screens/ClockScreen/WallpaperClock'
+import AnimeClock from './src/screens/AnimeClock'
+import WallpaperClock from './src/screens/ClockScreen/WallpaperClock'
 import AnalogicClock from './src/screens/AnalogicClock'
 
 // import { HelloWorld } from './src/screens/Test'
@@ -35,9 +35,9 @@ function TabScreens() {
       <Tab.Screen name="analogicClock" component={AnalogicClock} />
       <Tab.Screen name="clock" component={ClockScreen} />
       <Tab.Screen name="home" component={HomeScreen} />
-      {/* <Tab.Screen name="player" component={MusicPlayer} /> */}
-      {/* <Tab.Screen name="animeClock" component={AnimeClock} /> */}
-      {/* <Tab.Screen name="wallpaperClock" component={WallpaperClock} /> */}
+      <Tab.Screen name="player" component={MusicPlayer} />
+      <Tab.Screen name="animeClock" component={AnimeClock} />
+      <Tab.Screen name="wallpaperClock" component={WallpaperClock} />
       {/* <Tab.Screen name="matrix" component={DigitalRain} /> */}
     </Tab.Navigator>
   )
